@@ -27,7 +27,6 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Tarjeta />
-							<Tarjeta />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
