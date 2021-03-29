@@ -1,18 +1,17 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import Planets from "../views/planets";
 
-export let Tarjeta = () => {
+export let TarjetaPlaneta = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="scrollmenu">
 			<div>
-				<h2>Characters</h2>
+				<h2>Planets</h2>
 			</div>
 			<div className="row flex-row flex-nowrap row-horizon">
-				{store.characters.map((item, indice) => {
+				{store.planets.map((item, indice) => {
 					return (
 						<div className="col-3" key={indice}>
 							<div className="card card-block" style={{ width: "18rem" }}>
@@ -23,19 +22,15 @@ export let Tarjeta = () => {
 								/>
 								<div className="container">
 									<h5 className="card-title">{item.name}</h5>
-									<p className="card-text">Gender: {item.gender}</p>
-									<p className="card-text">Hair-Color: {item.hair_color}</p>
-									<p className="card-text">Eye-Color: {item.eye_color}</p>
-									<button type="button" className="btn btn-outline-primary">
-										View Character
+									<p className="card-text">Population: {item.population}</p>
+									<p className="card-text">Terrain: {item.terrain}</p>
+									<button
+										type="button"
+										className="btn btn-outline-primary"
+										onClick={() => alert(indice)}>
+										View Planet
 									</button>
-									{store.favorites.includes(item.name) ? null : (
-										<i
-											className="fa fa-heart text-danger"
-											style={{ background: "yellow" }}
-											onClick={() => actions.setFavorites(item.name)}
-										/>
-									)}
+									<i className="fa fa-heart text-danger" style={{ background: "yellow" }} />
 								</div>
 							</div>
 						</div>

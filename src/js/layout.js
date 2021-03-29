@@ -4,15 +4,12 @@ import ScrollToTop from "./component/scrollToTop";
 import { Container, Row, Col } from "react-bootstrap"; // instalado de React-Bootstrap
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { NavbarMenu } from "./component/navbarMenus";
 import { Footer } from "./component/footer";
 //POR MI\
 
-import { Tarjeta } from "./component/personCard";
 import Planets from "./views/planets";
 import Characters from "./views/characters";
 
@@ -35,7 +32,7 @@ const Layout = () => {
 					<Row>
 						<Col>
 							<Switch>
-								<Route exact path="/" component={Tarjeta} />
+								<Route exact path="/" component={Home} />
 								<Route exact path="/planets" component={Planets} />
 								<Route exact path="/characters" component={Characters} />
 

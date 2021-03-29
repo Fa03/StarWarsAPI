@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Cortito from "../../img/Cortito.jpg";
-import { Navbar, Image, NavbarBrand, Nav, DropdownButton, Dropdown } from "react-bootstrap"; // instalado de React-Bootstrap
+import { Navbar, Image, Nav, DropdownButton, Dropdown } from "react-bootstrap"; // instalado de React-Bootstrap
+import { Context } from "../store/appContext";
 
 export const NavbarMenu = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<Navbar>
 			<Navbar.Brand>
@@ -11,18 +14,22 @@ export const NavbarMenu = () => {
 					<Image src={Cortito} style={{ width: "75px" }} alt="iconoSW" />
 				</Link>
 			</Navbar.Brand>
-			<Nav classsName="mr-auto">
+			{/* <Nav classsName="mr-auto">
 				<Link className="nav-link" to="/planets">
 					Planets
 				</Link>
 				<Link className="nav-link" to="/characters">
-					Personajes
-				</Link>
-			</Nav>
-			<DropdownButton id="dropdown-basic-button" title="Favorites">
-				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+					Characters
+				</Link> */}
+			{/* </Nav> */}
+			<DropdownButton id="dropdown-basic-button" title={`Favoritos ${store.favorites.length}`}>
+				{store.favorites.map((item, index) => {
+					return (
+						<Dropdown.Item key={index} href="#/action-1">
+							{item} <i className="fa fa-trash" onClick={() => actions.deleteFavorite(index)} />
+						</Dropdown.Item>
+					);
+				})}
 			</DropdownButton>
 		</Navbar>
 

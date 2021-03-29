@@ -16,6 +16,13 @@ div.scrollmenu {
     background-color: #cccccc;
 }
 
+.dropdown-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 // body {
 //     background-image: url("../img/unnamed.jpg");
