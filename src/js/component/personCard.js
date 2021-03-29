@@ -7,7 +7,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-let arregloTemporal = ["Carro", "casa", "mapa", "Carro", "casa", "mapa"];
+let arregloTemporal = ["Carro", "casa", "Carro"];
 
 export let Tarjeta = () => {
 	return (
@@ -27,9 +27,19 @@ export let Tarjeta = () => {
 									classNameName="card-img-top"
 									alt="..."
 								/>
-								<div className="">
+								<div className="container">
 									<h5 className="card-title">{item}</h5>
-									<p>Info Personaje??</p>
+									<p className="card-text">Gender:</p>
+									<p className="card-text">Hair-Color:</p>
+									<p className="card-text">Eye-Color</p>
+									<button type="button" className="btn btn-outline-primary">
+										Learn more!
+									</button>
+									<i
+										className="fa fa-heart text-danger"
+										style={{ background: "yellow" }}
+										padding-left="30px"
+									/>
 									<Link />
 								</div>
 							</div>

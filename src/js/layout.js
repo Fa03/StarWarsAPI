@@ -1,17 +1,20 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import { Container, Row, Col } from "react-bootstrap"; // instalado de React-Bootstrap
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { NavbarMenu } from "./component/navbarMenus";
 import { Footer } from "./component/footer";
-//POR MI
+//POR MI\
 
 import { Tarjeta } from "./component/personCard";
+import Planets from "./views/planets";
+import Characters from "./views/characters";
 
 //create your first component
 const Layout = () => {
@@ -20,28 +23,37 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column">
+		<Container>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Tarjeta />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
+					<Row>
+						<Col>
+							<NavbarMenu />
+						</Col>
+					</Row>
+
+					<Row>
+						<Col>
+							<Switch>
+								<Route exact path="/" component={Tarjeta} />
+								<Route exact path="/planets" component={Planets} />
+								<Route exact path="/characters" component={Characters} />
+
+								{/* <Route exact path="/">
+									<Tarjeta />
+								</Route> */}
+
+								<Route>
+									<h1>Not found!</h1>
+								</Route>
+							</Switch>
+						</Col>
+					</Row>
+
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
-		</div>
+		</Container>
 	);
 };
 
