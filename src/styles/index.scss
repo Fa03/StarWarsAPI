@@ -24,13 +24,23 @@ div.scrollmenu {
 }
 
 
-// body {
-//     background-image: url("../img/unnamed.jpg");
-//     background-repeat: no-repeat;
-//     background-attachment: fixed;
-//     background-size: cover;
-// }
+body {
+    background-image: url("../img/backgroud4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h2{
+    color:rgb(66, 63, 10);
+}
 
+#footName{
+    color: white;
+}
+
+.fa-heart:hover{
+    color: rgb(160, 155, 155);
+}
 // .h1, h2, a, p{
 //     color: white;
 // }

@@ -10,10 +10,10 @@ export let TarjetaPlaneta = () => {
 			<div>
 				<h2>Planets</h2>
 			</div>
-			<div className="row flex-row flex-nowrap row-horizon">
+			<div className="row flex-row flex-nowrap row-horizon mb-2">
 				{store.planets.map((item, indice) => {
 					return (
-						<div className="col-3" key={indice}>
+						<div className="col-3 mr-4" key={indice}>
 							<div className="card card-block" style={{ width: "18rem" }}>
 								<img
 									src="https://www.hd-tecnologia.com/imagenes/articulos/2020/10/Viking-City-Builder-es-el-primer-RTS-con-Ray-Tracing-y-DLSS-2.0-y-fue-creado-por-una-sola-persona.jpg"
@@ -21,16 +21,23 @@ export let TarjetaPlaneta = () => {
 									alt="..."
 								/>
 								<div className="container">
-									<h5 className="card-title">{item.name}</h5>
+									<h5 className="card-title text-center">{item.name}</h5>
 									<p className="card-text">Population: {item.population}</p>
 									<p className="card-text">Terrain: {item.terrain}</p>
-									<button
-										type="button"
-										className="btn btn-outline-primary"
-										onClick={() => alert(indice)}>
-										View Planet
-									</button>
-									<i className="fa fa-heart text-danger" style={{ background: "yellow" }} />
+									<div className="d-flex justify-content-between pb-2">
+										<button
+											type="button"
+											className="btn btn-outline-dark"
+											onClick={() => alert(indice)}>
+											View Planet
+										</button>
+										{store.favorites.includes(item.name) ? null : (
+											<i
+												className="fa fa-heart fa-2x"
+												onClick={() => actions.setFavorites(item.name)}
+											/>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>

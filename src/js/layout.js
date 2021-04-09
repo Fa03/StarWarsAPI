@@ -12,6 +12,7 @@ import { Footer } from "./component/footer";
 
 import Planets from "./views/planets";
 import Characters from "./views/characters";
+import PropTypes from "prop-types"; //para el onClick del VIEW DETAILS
 
 //create your first component
 const Layout = () => {
@@ -34,7 +35,7 @@ const Layout = () => {
 							<Switch>
 								<Route exact path="/" component={Home} />
 								<Route exact path="/planets" component={Planets} />
-								<Route exact path="/characters" component={Characters} />
+								<Route exact path="/characters/:id" component={Characters} />
 
 								{/* <Route exact path="/">
 									<Tarjeta />
