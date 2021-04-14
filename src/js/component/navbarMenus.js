@@ -12,22 +12,9 @@ export const NavbarMenu = () => {
 		<Navbar className="d-flex justify-content-between">
 			<Navbar.Brand>
 				<Link to="/">
-					<Image
-						src={Cortito}
-						style={{ width: "75px" }}
-						alt="iconoSW"
-						onClick={props => this.props.history.push("/")}
-					/>
+					<Image src={Cortito} style={{ width: "75px" }} alt="iconoSW" />
 				</Link>
 			</Navbar.Brand>
-			{/* <Nav classsName="mr-auto">
-				<Link className="nav-link" to="/planets">
-					Planets
-				</Link>
-				<Link className="nav-link" to="/characters">
-					Characters
-				</Link> */}
-			{/* </Nav> */}
 			<Dropdown as={ButtonGroup}>
 				<Button variant="dark">
 					Favorites <Badge variant="light">{store.favorites.length}</Badge>

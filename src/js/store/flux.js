@@ -51,8 +51,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(URL, Propiedades);
 				const json = await response.json();
 
-				console.log("DATA>>", json);
+				console.log("DATA>>", json.results);
 				setStore({ characters: json.results });
+				console.log(getStore().characters);
 			},
 
 			fetchPlanets: async () => {
