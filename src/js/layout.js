@@ -34,7 +34,7 @@ const Layout = () => {
 						<Col>
 							<Switch>
 								<Route exact path="/" component={Home} />
-								<Route exact path="/planets" component={Planets} />
+								<Route exact path="/planets/:id" component={Planets} />
 								<Route exact path="/characters/:id" component={Characters} />
 
 								{/* <Route exact path="/">

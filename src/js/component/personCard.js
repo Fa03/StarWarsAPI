@@ -30,7 +30,8 @@ export let Tarjeta = () => {
 									//     })
 									//     urlImagen!="" ? src=urlImagen : src="https://www.lego.com/cdn/cs/set/assets/bltc1dae2db229ec42e/75251.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1"
 									// }
-									src="https://www.lego.com/cdn/cs/set/assets/bltc1dae2db229ec42e/75251.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1"
+									src={store.imgPer[0].url}
+									//src="https://www.lego.com/cdn/cs/set/assets/bltc1dae2db229ec42e/75251.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1"
 									classNameName="card-img-top"
 									alt="..."
 								/>

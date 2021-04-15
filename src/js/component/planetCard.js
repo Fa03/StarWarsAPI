@@ -16,7 +16,7 @@ export let TarjetaPlaneta = () => {
 						<div className="col-3 mr-4" key={indice}>
 							<div className="card card-block" style={{ width: "18rem" }}>
 								<img
-									src="https://www.hd-tecnologia.com/imagenes/articulos/2020/10/Viking-City-Builder-es-el-primer-RTS-con-Ray-Tracing-y-DLSS-2.0-y-fue-creado-por-una-sola-persona.jpg"
+									src="https://cdn.rebrickable.com/media/thumbs/mocs/moc-26468.jpg/1000x800.jpg?1607352259.4214168"
 									classNameName="card-img-top"
 									alt="..."
 								/>
@@ -25,12 +25,9 @@ export let TarjetaPlaneta = () => {
 									<p className="card-text">Population: {item.population}</p>
 									<p className="card-text">Terrain: {item.terrain}</p>
 									<div className="d-flex justify-content-between pb-2">
-										<button
-											type="button"
-											className="btn btn-outline-dark"
-											onClick={() => alert(indice)}>
-											View Planet
-										</button>
+										<Link className="btn btn-outline-dark" to={`/planets/${indice}`}>
+											View Character
+										</Link>
 										{store.favorites.includes(item.name) ? null : (
 											<i
 												className="fa fa-heart fa-2x"
